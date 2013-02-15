@@ -27,10 +27,6 @@ class StringCalculator
 		sum
 	end
 
-	def replace_commas_and_newlines_with_pluses(input)
-		input.gsub(/[,|\n]/, '+')	
-	end
-
 	def contains_negative_number(input)
 		(input =~ /-\d/) != nil
 	end
