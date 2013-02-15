@@ -18,7 +18,9 @@ class StringCalculator
 	end	
 
 	def evaluate_elements(input)
-			eval(replace_commas_and_newlines_with_pluses(input))
+		sum = 0
+		input.split(/[,|\n]/).each { |number| sum = sum + number.to_i }
+		sum
 	end
 
 	def replace_commas_and_newlines_with_pluses(input)
