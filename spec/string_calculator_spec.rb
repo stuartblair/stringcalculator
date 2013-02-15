@@ -22,5 +22,9 @@ describe StringCalculator do
 		it "returns the sum of two comma delimited numbers" do
 			string_calculator.calc("2,3").should eql 5
 		end
+
+		it "returns the sum of two newline delimited numbers" do 
+			string_calculator.calc("2\n3").should eql 5
+		end
 	end
 end
