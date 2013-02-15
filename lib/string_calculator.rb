@@ -1,17 +1,13 @@
 class StringCalculator
 	def calc(input)
-		if contains_negative_number(input) then
-			raise RuntimeError, "Negative number found in the input"
-		else
-			evaluate_elements(input)
-		end
+		evaluate_elements(input)
 	end
 
 	private
 
 	def evaluate_elements(input)
 		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
-				sum + number 
+			sum + number 
 		end 
 	end
 
@@ -28,7 +24,13 @@ class StringCalculator
 	end
 
 	def valid_number_from(number)
-		if number <= 1000 then number else 0 end
+		if number < 0 then
+			raise RuntimeError, "Negative number found in the input"
+		elsif number <= 1000 then 
+			number
+		else 
+			0 
+		end
 	end
 
 	def contains_negative_number(input)
