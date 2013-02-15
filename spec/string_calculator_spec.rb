@@ -18,5 +18,9 @@ describe StringCalculator do
 		it "returns the number from the string when given a single number" do
 			string_calculator.calc("2").should eql 2
 		end
+
+		it "returns the sum of two comma delimited numbers" do
+			string_calculator.calc("2,3").should eql 5
+		end
 	end
 end
