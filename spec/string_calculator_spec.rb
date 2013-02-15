@@ -2,10 +2,21 @@ require 'spec_helper'
 require 'string_calculator'
 
 describe StringCalculator do
-	context "when given an empty string" do
-		it "returns 0" do
-			string_calculator = StringCalculator.new
+	def string_calculator
+		@string_calculator
+	end
+
+	before(:each) do
+		@string_calculator = StringCalculator.new
+	end
+
+	describe "calc" do
+		it "returns 0 when given an empty string" do
 			string_calculator.calc("").should eql 0
+		end
+
+		it "returns the number from the string when given a single number" do
+			string_calculator.calc("2").should eql 2
 		end
 	end
 end
