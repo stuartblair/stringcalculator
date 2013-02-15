@@ -1,16 +1,12 @@
 class StringCalculator
 	def calc(input)
-		evaluate_elements(input)
-	end
-
-	private
-
-	def evaluate_elements(input)
 		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
 			sum + number 
 		end 
 	end
 
+	private
+	
 	def numeric_value_of(number_text)
 		number_text.to_i
 	end
