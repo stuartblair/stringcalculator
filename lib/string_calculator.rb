@@ -18,9 +18,9 @@ class StringCalculator
 	end	
 
 	def evaluate_elements(input)
-		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
+		valid_numbers_from(elements(input)).inject do |sum, number| 
 				sum + number 
-		end || 0
+		end 
 	end
 
 	def numeric_value_of(number_text)
