@@ -26,5 +26,9 @@ describe StringCalculator do
 		it "returns the sum of two newline delimited numbers" do 
 			string_calculator.calc("2\n3").should eql 5
 		end
+
+		it "returns the sum of three numbers delimited either way" do
+			string_calculator.calc("2\n3,4").should eql 9
+		end
 	end
 end
