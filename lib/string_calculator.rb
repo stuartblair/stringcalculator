@@ -1,6 +1,6 @@
 class StringCalculator
 	def calc(input)
-		0
+		input.to_i
 	end
 end
 
