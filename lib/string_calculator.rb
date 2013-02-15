@@ -19,7 +19,11 @@ class StringCalculator
 
 	def evaluate_elements(input)
 		sum = 0
-		input.split(/[,|\n]/).each { |number| sum = sum + number.to_i }
+		input.split(/[,|\n]/).each do |number| 
+			if (number.to_i <= 1000) then
+				sum = sum + number.to_i 
+			end
+		end
 		sum
 	end
 
