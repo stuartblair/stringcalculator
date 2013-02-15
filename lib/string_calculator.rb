@@ -1,5 +1,5 @@
 class StringCalculator
-	def calc
+	def calc(input)
 		0
 	end
 end
