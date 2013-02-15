@@ -7,18 +7,14 @@ class StringCalculator
 
 	private
 	
-	def numeric_value_of(number_text)
-		number_text.to_i
+	def valid_numbers_from(elements)
+		elements.map { |element| valid_number_from(numeric_value_of(element)) }
 	end
 
 	def elements(input)
 		input.split(/[,|\n]/)
 	end
-
-	def valid_numbers_from(elements)
-		elements.map { |element| valid_number_from(numeric_value_of(element)) }
-	end
-
+	
 	def valid_number_from(number)
 		if number < 0 then
 			raise RuntimeError, "Negative number found in the input"
@@ -27,5 +23,9 @@ class StringCalculator
 		else 
 			0 
 		end
+	end
+
+	def numeric_value_of(number_text)
+		number_text.to_i
 	end
 end
