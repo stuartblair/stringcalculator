@@ -1,6 +1,6 @@
 class StringCalculator
 	def calc(input)
-		input.to_i
+		if input.empty? then return 0 end
+		eval(input.gsub(',', '+'))
 	end
 end
-
