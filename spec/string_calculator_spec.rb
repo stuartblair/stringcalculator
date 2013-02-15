@@ -36,7 +36,7 @@ describe StringCalculator do
 		end
 
 		it "ignores numbers greater than 1000" do
-			pending "refactoring of evaluated_string method, unpend when refactoring complete"
+			"refactoring of evaluated_string method, unpend when refactoring complete"
 			string_calculator.calc("1001").should eql 0
 		end
 	end
