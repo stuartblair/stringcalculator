@@ -1,10 +1,6 @@
 class StringCalculator
 	def calc(input)
-		if input.empty? then 
-			return 0 
-		else
-			return evaluated_string(input)
-		end
+		return evaluated_string(input)
 	end
 
 	private
@@ -18,7 +14,7 @@ class StringCalculator
 	end	
 
 	def evaluate_elements(input)
-		valid_numbers_from(elements(input)).inject do |sum, number| 
+		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
 				sum + number 
 		end 
 	end
