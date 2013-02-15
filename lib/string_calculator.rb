@@ -32,8 +32,4 @@ class StringCalculator
 			0 
 		end
 	end
-
-	def contains_negative_number(input)
-		(input =~ /-\d/) != nil
-	end
 end
