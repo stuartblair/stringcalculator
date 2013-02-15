@@ -13,9 +13,13 @@ class StringCalculator
 		if contains_negative_number(input) then
 			raise RuntimeError, "Negative number found in the input"
 		else
-			eval(replace_commas_and_newlines_with_pluses(input))
+			evaluate_elements(input)
 		end
-	end		
+	end	
+
+	def evaluate_elements(input)
+			eval(replace_commas_and_newlines_with_pluses(input))
+	end
 
 	def replace_commas_and_newlines_with_pluses(input)
 		input.gsub(/[,|\n]/, '+')	
