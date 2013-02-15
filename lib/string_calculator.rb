@@ -19,7 +19,7 @@ class StringCalculator
 
 	def evaluate_elements(input)
 		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
-				sum + number unless number > 1000
+				sum + number 
 		end || 0
 	end
 
@@ -32,7 +32,11 @@ class StringCalculator
 	end
 
 	def valid_numbers_from(elements)
-		elements.map { |element| numeric_value_of(element) }
+		elements.map { |element| valid_number_from(numeric_value_of(element)) }
+	end
+
+	def valid_number_from(number)
+		if number <= 1000 then number else 0 end
 	end
 
 	def contains_negative_number(input)
