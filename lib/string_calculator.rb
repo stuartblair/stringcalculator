@@ -18,8 +18,8 @@ class StringCalculator
 	end	
 
 	def evaluate_elements(input)
-		elements(input).inject(0) do |sum, number_text| 
-				sum + numeric_value_of(number_text) unless numeric_value_of(number_text) > 1000
+		valid_numbers_from(elements(input)).inject(0) do |sum, number| 
+				sum + number unless number > 1000
 		end || 0
 	end
 
@@ -29,6 +29,10 @@ class StringCalculator
 
 	def elements(input)
 		input.split(/[,|\n]/)
+	end
+
+	def valid_numbers_from(elements)
+		elements.map { |element| numeric_value_of(element) }
 	end
 
 	def contains_negative_number(input)
