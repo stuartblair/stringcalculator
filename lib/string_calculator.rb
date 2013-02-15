@@ -18,13 +18,17 @@ class StringCalculator
 	end	
 
 	def evaluate_elements(input)
-		input.split(/[,|\n]/).inject(0) do |sum, number_text| 
+		elements(input).inject(0) do |sum, number_text| 
 				sum + numeric_value_of(number_text) unless numeric_value_of(number_text) > 1000
 		end || 0
 	end
 
 	def numeric_value_of(number_text)
 		number_text.to_i
+	end
+
+	def elements(input)
+		input.split(/[,|\n]/)
 	end
 
 	def contains_negative_number(input)
