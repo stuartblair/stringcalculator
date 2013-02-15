@@ -31,8 +31,8 @@ describe StringCalculator do
 			string_calculator.calc("2\n3,4").should eql 9
 		end
 
-		it "throws and exception if the string contains a negative number" do
-			expect { string_calculator.calc("-2") }.to throw_symbol(:negative_number)
+		it "throws an exception if the string contains a negative number" do
+			expect { string_calculator.calc("-2") }.to raise_error(RuntimeError)
 		end
 	end
 end
