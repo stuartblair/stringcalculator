@@ -12,12 +12,15 @@ class StringCalculator
 	end
 
 	def elements(input)
+		input.split(custom_delimiter_pattern(input))
+	end
+
+	def custom_delimiter_pattern(input)
 		match_data = input.match(/\/\/(.).*/)
 		if (match_data && match_data[1]) then
 			additional_pattern = "|#{match_data[1]}"
 		end
 		delimiter_pattern = Regexp.new"[,|\n#{additional_pattern}]"
-		input.split(delimiter_pattern)
 	end
 
 	def valid_number_from(number)
