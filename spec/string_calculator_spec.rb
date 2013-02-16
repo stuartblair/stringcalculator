@@ -38,5 +38,10 @@ describe StringCalculator do
 		it "ignores numbers greater than 1000" do
 			string_calculator.calc("1001").should eql 0
 		end
+
+		#A single char delimiter can be defined on the first line (e.g. //# for a ‘#’ as the delimiter)
+		it "interprets delimiters appearing on the first line" do
+			string_calculator.calc("//#\n2#3").should eql 5
+		end
 	end
 end
