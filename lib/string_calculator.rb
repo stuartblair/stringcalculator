@@ -6,15 +6,20 @@ class StringCalculator
 	end
 
 	private
-	
+
 	def valid_numbers_from(elements)
 		elements.map { |element| valid_number_from(numeric_value_of(element)) }
 	end
 
 	def elements(input)
-		input.split(/[,|\n]/)
+		match_data = input.match(/\/\/(.).*/)
+		if (match_data && match_data[1]) then
+			additional_pattern = "|#{match_data[1]}"
+		end
+		delimiter_pattern = Regexp.new"[,|\n#{additional_pattern}]"
+		input.split(delimiter_pattern)
 	end
-	
+
 	def valid_number_from(number)
 		if number < 0 then
 			raise RuntimeError, "Negative number found in the input"
