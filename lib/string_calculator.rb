@@ -1,3 +1,5 @@
+require 'tokenizer'
+
 module StringCalculator
 	class StringCalculator
 		def calc(input)
