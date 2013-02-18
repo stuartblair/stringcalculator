@@ -23,8 +23,11 @@ module StringCalculator
 		end
 
 		def custom_delimiter(input)
-			find_custom_delimiter_pattern = /\/\/(.).*/ 
-				input.match(find_custom_delimiter_pattern)[1] unless !input.match(find_custom_delimiter_pattern)
+			input.match(single_one_character_delimiter_pattern)[1] unless !input.match(single_one_character_delimiter_pattern)
+		end
+
+		def single_one_character_delimiter_pattern
+			/\/\/([^\[]).*/
 		end
 	end
 end

@@ -40,9 +40,13 @@ module StringCalculator
 				string_calculator.calc("1001").should eql 0
 			end
 
-			#A single char delimiter can be defined on the first line (e.g. //# for a ‘#’ as the delimiter)
 			it "interprets delimiters appearing on the first line" do
 				string_calculator.calc("//#\n2#3").should eql 5
+			end
+
+			it "interprets multicharacter delimiters appearing on the first line" do
+				pending "until we get the Tokenizer to work with multicharcter delimiters"
+				string_calculator.calc("//[###]\n2###3").should eql 5
 			end
 		end
 	end

@@ -19,6 +19,11 @@ module StringCalculator
 			it "interprets single character delimiters on the first line" do
 				tokenizer.tokens("//*\n2*3").should eql ["2", "3"]
 			end
+
+			it "interprets multi-character delimiters on the first line" do
+				pending "wait while I backtrack and refactor the single char handling to be a special case of multi-character delimiters"
+				tokenizer.tokens("//[***]\n2***3").should eql ["2", "3"]
+			end
 		end
 	end
 end
