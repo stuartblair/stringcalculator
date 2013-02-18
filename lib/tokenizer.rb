@@ -15,15 +15,13 @@ module StringCalculator
 		end
 
 		def custom_pattern(input)
-			if (custom_delimiter(input)) then
-				"|#{custom_delimiter(input)}"
-			else 
-				""
+			custom_delimiters(input).inject do |pattern, custom_delimiter| 
+				pattern += "|#{custom_delimiter}"
 			end
 		end
 
-		def custom_delimiter(input)
-			input.match(single_one_character_delimiter_pattern)[1] unless !input.match(single_one_character_delimiter_pattern)
+		def custom_delimiters(input)
+			input.scan(single_one_character_delimiter_pattern)
 		end
 
 		def single_one_character_delimiter_pattern
