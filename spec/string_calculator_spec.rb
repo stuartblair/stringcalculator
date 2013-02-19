@@ -45,7 +45,6 @@ module StringCalculator
 			end
 
 			it "interprets multicharacter delimiters appearing on the first line" do
-				pending "until we get the Tokenizer to work with multicharcter delimiters"
 				string_calculator.calc("//[###]\n2###3").should eql 5
 			end
 		end
