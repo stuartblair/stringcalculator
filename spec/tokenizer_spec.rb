@@ -23,6 +23,10 @@ module StringCalculator
 			it "interprets multi-character delimiters on the first line" do
 				tokenizer.tokens("//[***]\n2***3").should eql ["2", "3"]
 			end
+			
+			it "interprets multiple variable length delimiters on the first line" do
+				tokenizer.tokens("//[X][BING]\n2BING3X1").should eql ["2", "3", "1"]
+			end
 		end
 	end
 end

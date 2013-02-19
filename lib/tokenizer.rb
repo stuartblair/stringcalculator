@@ -10,6 +10,9 @@ module StringCalculator
 			input.sub(/\/\/.*\n/, '')
 		end
 
+		def delimiter_instruction(input)
+		end
+
 		def delimiter_pattern(input)
 			Regexp.new(",|\n#{custom_pattern(input)}")
 		end
@@ -32,6 +35,5 @@ module StringCalculator
 		def multiple_character_delimiter_pattern
 			/\/\/\[([^\]]+)\].*/
 		end
-
 	end
 end
