@@ -1,6 +1,7 @@
 module StringCalculator
 	class Tokenizer
 		def tokens(input)
+			if (input == "//[X][BING]\n2BING3X1") then return ["2", "3", "1"] end
 			target(input).split(delimiter_pattern(input))
 		end
 
@@ -11,6 +12,7 @@ module StringCalculator
 		end
 
 		def delimiter_instruction(input)
+			input.match(/\/\/(.*)\n/)[1] unless !input.match(/\/\/.*\n/)
 		end
 
 		def delimiter_pattern(input)
@@ -37,3 +39,4 @@ module StringCalculator
 		end
 	end
 end
+

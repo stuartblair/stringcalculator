@@ -49,7 +49,6 @@ module StringCalculator
 			end
 
 			it "interprets multiple variable length delimiters appearing on the first line" do
-				pending "until we get the tokenizer working"
 				string_calculator.calc("//[X][BING]\n2BING3X1").should eql 6
 			end
 		end
