@@ -1,12 +1,16 @@
 module StringCalculator
 	class Tokenizer
 		def tokens(input)
-			target(input).split(delimiter_pattern(delimiter_instruction(input)))
+			calculation_source(input).split(
+				delimiter_pattern(
+					delimiter_instruction(input)
+				)
+			)
 		end
 
 		private
 
-		def target(input)
+		def calculation_source(input)
 			input.sub(/\/\/.*\n/, '')
 		end
 
