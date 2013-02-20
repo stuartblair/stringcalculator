@@ -15,11 +15,11 @@ module StringCalculator
 		end
 
 		def delimiter_pattern(input)
-			Regexp.new(",|\n#{custom_pattern(input)}")
+			Regexp.new(custom_pattern(input))
 		end
 
 		def custom_pattern(input)
-			custom_delimiters(input).inject("") do |pattern, custom_delimiter| 
+			custom_delimiters(input).inject(",|\n") do |pattern, custom_delimiter| 
 				pattern += "|#{Regexp.escape(custom_delimiter)}"
 			end
 		end
