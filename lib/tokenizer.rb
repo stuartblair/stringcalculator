@@ -20,14 +20,14 @@ module StringCalculator
 
 		def custom_pattern(input)
 			custom_delimiters(input).inject("") do |pattern, custom_delimiter| 
-				pattern += "|#{Regexp.escape(custom_delimiter[0])}"
+				pattern += "|#{Regexp.escape(custom_delimiter)}"
 			end
 		end
 
 		def custom_delimiters(input)
 			if (!input) then return [] end
-			input.scan(single_one_character_delimiter_pattern) +
-				input.scan(multiple_character_delimiter_pattern)
+			input.scan(single_one_character_delimiter_pattern).flatten +
+				input.scan(multiple_character_delimiter_pattern).flatten
 		end
 
 		def single_one_character_delimiter_pattern
